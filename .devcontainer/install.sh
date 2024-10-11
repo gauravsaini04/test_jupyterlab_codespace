@@ -928,7 +928,7 @@ if [ "${INSTALL_JUPYTERLAB}" = "true" ]; then
             echo "${REPLACE_STR}:${PATH}" >> ${SUDOERS_FILE}
         fi
          # Create symlink for /home/vscode/.local/bin
-        export PATH=$PATH:/home/${USERNAME}/.local/bin
+        export PATH=$PATH:/home/vscode/.local/bin
     fi
 
     # Configure JupyterLab if needed
