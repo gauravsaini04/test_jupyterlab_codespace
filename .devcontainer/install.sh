@@ -34,9 +34,6 @@ IFS="," read -r -a DEFAULT_UTILS <<< "${TOOLSTOINSTALL:-flake8,autopep8,black,ya
 PYTHON_SOURCE_GPG_KEYS="64E628F8D684696D B26995E310250568 2D347EA6AA65421D FB9921286F5E1540 3A5CA953F73C700D 04C367C218ADD4FF 0EDDC5F26A45C816 6AF053F07D9DC8D2 C9BE28DEE6DF025C 126EB563A74B06BF D9866941EA5BBD71 ED9D77D5 A821E680E5FA6305"
 
 KEYSERVER_PROXY="${HTTPPROXY:-"${HTTP_PROXY:-""}"}"
-
-export PATH=$PATH:/home/vscode/.local/bin
-
 set -e
 
 if [ "$(id -u)" -ne 0 ]; then
@@ -929,6 +926,9 @@ if [ "${INSTALL_JUPYTERLAB}" = "true" ]; then
             # In either case take same action, note >> places at end of file
             echo "${REPLACE_STR}:${PATH}" >> ${SUDOERS_FILE}
         fi
+        # Create symlink for /home/vscode/.local/bin
+        export PATH=$PATH:/home/vscode/.local/bin
+        ln -s /home/${USERNAME}/.local/bin /home/vscode/.local/bin
     fi
 
     # Configure JupyterLab if needed
