@@ -7,5 +7,11 @@
 	"dockerfile": "./Dockerfile",
 	"context": "."
     },
+	"containerEnv": {
+    "PYTHON_PATH": "/usr/local/python/current",
+    "PIPX_HOME": "/usr/local/py-utils",
+    "PIPX_BIN_DIR": "/usr/local/py-utils/bin",
+    "PATH": "/usr/local/python/current/bin:/usr/local/py-utils/bin:/home/vscode/.local/bin:${PATH}"
+  },
     "remoteUser": "vscode"
 }
