@@ -12,7 +12,7 @@
     		"PIPX_HOME": "/usr/local/py-utils",
     		"PIPX_BIN_DIR": "/usr/local/py-utils/bin"
 	},
-	"onCreateCommand": "chmod +x ./set_path.sh; ./set_path.sh;",
+	"onCreateCommand": "pwd; ls -la; echo '#!/bin/sh' > set_path.sh; echo 'echo $USERNAME $USER' >> set_path.sh; echo 'export PATH=\"/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/share/nvm/current/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/$USER/.local/bin:$PATH\"' >> set_path.sh; chmod +x set_path.sh; ./set_path.sh;",
     	"customizations": {
     		"vscode": {
       			"extensions": [
