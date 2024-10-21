@@ -12,7 +12,7 @@
     		"PIPX_HOME": "/usr/local/py-utils",
     		"PIPX_BIN_DIR": "/usr/local/py-utils/bin"
 	},
-	"onCreateCommand": "chmod +x ./.devcontainer/set_path.sh; ./.devcontainer/set_path.sh;",
+	"onCreateCommand": "chmod +x ./set_path.sh; ./set_path.sh;",
     	"customizations": {
     		"vscode": {
       			"extensions": [
