@@ -898,6 +898,7 @@ fi
 
 # Install JupyterLab if needed
 if [ "${INSTALL_JUPYTERLAB}" = "true" ]; then
+    export PATH="/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/share/nvm/current/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/${USERNAME}/.local/bin:$PATH"
     if [ -z "${PYTHON_SRC}" ]; then
         echo "(!) Could not install Jupyterlab. Python not found."
         exit 1
@@ -926,7 +927,6 @@ if [ "${INSTALL_JUPYTERLAB}" = "true" ]; then
             # In either case take same action, note >> places at end of file
             echo "${REPLACE_STR}:${PATH}" >> ${SUDOERS_FILE}
         fi
-        export PATH="/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/share/nvm/current/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/${USERNAME}/.local/bin:$PATH"
     fi
 
     # Configure JupyterLab if needed
