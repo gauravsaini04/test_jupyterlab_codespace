@@ -1,7 +1,7 @@
 {
     	"name": "Only Jupyter",
     	"hostRequirements": {
-      	"cpus": 4
+      	"cpus": 16
     	},
     	"build": {
 		"dockerfile": "./Dockerfile",
