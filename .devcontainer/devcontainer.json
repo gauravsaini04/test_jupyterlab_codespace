@@ -28,5 +28,5 @@
       			}
     		}
   	},
-	"remoteUser": "vscode"
+	"containerUser": "vscode"
 }
