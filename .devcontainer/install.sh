@@ -945,6 +945,9 @@ if [ "${INSTALL_JUPYTERLAB}" = "true" ]; then
     fi
 fi
 
+echo '#!/bin/sh' > set_path.sh
+echo 'export PATH="/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/share/nvm/current/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/$USERNAME/.local/bin:$PATH"' >> set_path.sh
+
 # Clean up
 clean_up
 
