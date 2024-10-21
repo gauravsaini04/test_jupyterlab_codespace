@@ -911,6 +911,9 @@ if [ "${INSTALL_JUPYTERLAB}" = "true" ]; then
     install_user_package $INSTALL_UNDER_ROOT jupyterlab
     install_user_package $INSTALL_UNDER_ROOT jupyterlab-git
 
+    # Create a symlink for the JupyterLab binary
+    ln -s $(which jupyter-lab) /usr/local/bin/jupyterlab
+    
     if [ "$INSTALL_UNDER_ROOT" = false ]; then
         # JupyterLab would have installed into /home/${USERNAME}/.local/bin
         # Adding it to default path for Codespaces which use non-login shells
