@@ -910,9 +910,6 @@ if [ "${INSTALL_JUPYTERLAB}" = "true" ]; then
 
     install_user_package $INSTALL_UNDER_ROOT jupyterlab
     install_user_package $INSTALL_UNDER_ROOT jupyterlab-git
-
-    # Create a symlink for the JupyterLab binary
-    ln -s $(which jupyter-lab) /usr/local/bin/jupyterlab
     
     if [ "$INSTALL_UNDER_ROOT" = false ]; then
         # JupyterLab would have installed into /home/${USERNAME}/.local/bin
@@ -944,6 +941,8 @@ if [ "${INSTALL_JUPYTERLAB}" = "true" ]; then
         add_user_jupyter_config $CONFIG_DIR $CONFIG_FILE "c.ServerApp.allow_origin = '${CONFIGURE_JUPYTERLAB_ALLOW_ORIGIN}'"
         add_user_jupyter_config $CONFIG_DIR $CONFIG_FILE "c.NotebookApp.allow_origin = '${CONFIGURE_JUPYTERLAB_ALLOW_ORIGIN}'"
     fi
+    # Create a symlink for the JupyterLab binary
+    ln -s $(which jupyter-lab) /usr/local/bin/jupyter-lab
 fi
 
 # Clean up
