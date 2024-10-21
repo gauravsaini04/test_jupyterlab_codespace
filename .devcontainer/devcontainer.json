@@ -10,8 +10,7 @@
 	"containerEnv": {
     		"PYTHON_PATH": "/usr/local/python/current",
     		"PIPX_HOME": "/usr/local/py-utils",
-    		"PIPX_BIN_DIR": "/usr/local/py-utils/bin",
-		"PATH": "/usr/local/python/current/bin:/usr/local/py-utils/bin:${PATH}"
+    		"PIPX_BIN_DIR": "/usr/local/py-utils/bin"
 	},
 	"onCreateCommand": "chmod +x set_path.sh; ./set_path.sh;",
     	"customizations": {
