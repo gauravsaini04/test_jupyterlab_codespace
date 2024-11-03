@@ -27,7 +27,7 @@ if [ -z "$USERNAME" ]; then
     USERNAME="vscode"  # Fallback to default
 fi
 export USERNAME
-echo "Using USERNAME: $USERNAME"
+echo "Using USERNAME: $USERNAME" > /tmp/user.txt
 
 INSTALL_JUPYTERLAB="${INSTALLJUPYTERLAB:-"true"}"
 CONFIGURE_JUPYTERLAB_ALLOW_ORIGIN="${CONFIGUREJUPYTERLABALLOWORIGIN:-"*"}"
