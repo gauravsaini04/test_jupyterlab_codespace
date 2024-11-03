@@ -21,7 +21,7 @@ USERNAME="vscode"
 UPDATE_RC="${UPDATE_RC:-"true"}"
 USE_ORYX_IF_AVAILABLE="${USEORYXIFAVAILABLE:-"true"}"
 
-export USERNAME="${USERNAME}"
+export USERNAME
 
 INSTALL_JUPYTERLAB="${INSTALLJUPYTERLAB:-"true"}"
 CONFIGURE_JUPYTERLAB_ALLOW_ORIGIN="${CONFIGUREJUPYTERLABALLOWORIGIN:-"*"}"
@@ -912,6 +912,8 @@ if [ "${INSTALL_JUPYTERLAB}" = "true" ]; then
 
     install_user_package $INSTALL_UNDER_ROOT jupyterlab
     install_user_package $INSTALL_UNDER_ROOT jupyterlab-git
+
+    export PATH="/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/share/nvm/current/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/${USERNAME}/.local/bin:${PATH}"
 
     # Configure JupyterLab if needed
     if [ -n "${CONFIGURE_JUPYTERLAB_ALLOW_ORIGIN}" ]; then
