@@ -21,8 +21,13 @@ USERNAME="vscode"
 UPDATE_RC="${UPDATE_RC:-"true"}"
 USE_ORYX_IF_AVAILABLE="${USEORYXIFAVAILABLE:-"true"}"
 
-export USERNAME=${USERNAME}
-export PATH="/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/share/nvm/current/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/${USERNAME}/.local/bin:${PATH}"
+
+# Export USERNAME if it's not already set
+if [ -z "$USERNAME" ]; then
+    USERNAME="vscode"  # Fallback to default
+fi
+export USERNAME
+echo "Using USERNAME: $USERNAME"
 
 INSTALL_JUPYTERLAB="${INSTALLJUPYTERLAB:-"true"}"
 CONFIGURE_JUPYTERLAB_ALLOW_ORIGIN="${CONFIGUREJUPYTERLABALLOWORIGIN:-"*"}"
