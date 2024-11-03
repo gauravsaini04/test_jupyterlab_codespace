@@ -21,16 +21,6 @@ USERNAME="vscode"
 UPDATE_RC="${UPDATE_RC:-"true"}"
 USE_ORYX_IF_AVAILABLE="${USEORYXIFAVAILABLE:-"true"}"
 
-
-# Export USERNAME if it's not already set
-if [ -z "$USERNAME" ]; then
-    USERNAME="vscode"  # Fallback to default
-fi
-export USERNAME="vscode"
-sudo touch /tmp/user.txt
-sudo chmod +x /tmp/user.txt
-echo "Using USERNAME: $USERNAME" > /tmp/user.txt
-
 INSTALL_JUPYTERLAB="${INSTALLJUPYTERLAB:-"true"}"
 CONFIGURE_JUPYTERLAB_ALLOW_ORIGIN="${CONFIGUREJUPYTERLABALLOWORIGIN:-"*"}"
 
