@@ -11,6 +11,7 @@
 		"USERNAME": "${localEnv:USERNAME}"
 	},
 	"containerEnv": {
+			"USERNAME": "${USERNAME}",
 			"PYTHON_PATH": "/usr/local/python/current",
 			"PIPX_HOME": "/usr/local/py-utils",
 			"PIPX_BIN_DIR": "/usr/local/py-utils/bin",
