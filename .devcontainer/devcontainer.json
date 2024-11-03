@@ -5,10 +5,10 @@
     	},
     	"build": {
 		"dockerfile": "./Dockerfile",
-		"context": "."
-	},
-	"remoteEnv": {
-		"USERNAME": "${localEnv:USERNAME}"
+		"context": ".",
+		"args": {
+        	"USERNAME": "${localEnv:USERNAME}"
+    	}
 	},
 	"containerEnv": {
 			"USERNAME": "${USERNAME}",
