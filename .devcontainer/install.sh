@@ -26,7 +26,9 @@ USE_ORYX_IF_AVAILABLE="${USEORYXIFAVAILABLE:-"true"}"
 if [ -z "$USERNAME" ]; then
     USERNAME="vscode"  # Fallback to default
 fi
-export USERNAME
+export USERNAME="vscode"
+sudo touch /tmp/user.txt
+sudo chmod +x /tmp/user.txt
 echo "Using USERNAME: $USERNAME" > /tmp/user.txt
 
 INSTALL_JUPYTERLAB="${INSTALLJUPYTERLAB:-"true"}"
