@@ -17,8 +17,9 @@ OVERRIDE_DEFAULT_VERSION="${OVERRIDEDEFAULTVERSION:-"true"}"
 
 export PIPX_HOME=${PIPX_HOME:-"/usr/local/py-utils"}
 
+# USERNAME="${USERNAME:-"${_REMOTE_USER:-"automatic"}"}"
 USERNAME="vscode"
-export USERNAME="vscode"
+export USERNAME="${USERNAME}"
 UPDATE_RC="${UPDATE_RC:-"true"}"
 USE_ORYX_IF_AVAILABLE="${USEORYXIFAVAILABLE:-"true"}"
 
