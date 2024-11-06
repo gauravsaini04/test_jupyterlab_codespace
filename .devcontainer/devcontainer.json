@@ -11,7 +11,8 @@
 			"PYTHON_PATH": "/usr/local/python/current",
 			"PIPX_HOME": "/usr/local/py-utils",
 			"PIPX_BIN_DIR": "/usr/local/py-utils/bin",
-			"PATH": "/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/share/nvm/current/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/${localEnv:USERNAME}/.local/bin:${PATH}"
+			"MY_VARIABLE": "${localEnv:USERNAME}",
+			"PATH": "/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/share/nvm/current/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/${MY_VARIABLE}/.local/bin:${PATH}"
 	},
 	"customizations": {
 		"vscode": {
