@@ -5,20 +5,16 @@
     	},
     	"build": {
 		"dockerfile": "./Dockerfile",
-		"context": ".",
-		"args": {
-        	"USERNAME": "${localEnv:USERNAME}"
-    	}
+		"context": "."
 	},
 	"remoteEnv": {
-		"USERNAME": "vscode",
-		"PATH": "/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/share/nvm/current/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/vscode/.local/bin:${PATH}"
+		"USERNAME": "${localEnv:vscode}"
 	},
 	"containerEnv": {
 			"PYTHON_PATH": "/usr/local/python/current",
 			"PIPX_HOME": "/usr/local/py-utils",
 			"PIPX_BIN_DIR": "/usr/local/py-utils/bin",
-			"PATH": "/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/share/nvm/current/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:${PATH}"
+			"PATH": "/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/share/nvm/current/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/${USERNAME}/.local/bin:${PATH}"
 	},
 	"customizations": {
 		"vscode": {
