@@ -12,7 +12,13 @@
 			"PIPX_HOME": "/usr/local/py-utils",
 			"PIPX_BIN_DIR": "/usr/local/py-utils/bin"
 	},
-	"postCreateCommand": "export PATH=/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/share/nvm/current/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/${USER}/.local/bin:$PATH >> /etc/environment",
+	"postAttachCommand": [
+	    "echo '#!/bin/bash' > /usr/local/bin/entrypoint.sh",
+	    "echo 'export PATH=\"/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/share/nvm/current/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/$USER/.local/bin:$PATH\"' >> /usr/local/bin/entrypoint.sh",
+	    "echo 'exec \"$@\"' >> /usr/local/bin/entrypoint.sh",
+	    "chmod +x /usr/local/bin/entrypoint.sh"	
+	],
+	"entrypoint": "/usr/local/bin/entrypoint.sh",
 	"customizations": {
 		"vscode": {
 			"extensions": [
